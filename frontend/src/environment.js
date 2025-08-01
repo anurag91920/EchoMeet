@@ -1,8 +1,8 @@
-let IS_PROD = false;
+let IS_PROD = true; // Production mode flag
 
 const server = IS_PROD
-  ? "http://localhost:8000"  // ✅ Production URL (या Render/Heroku का URL)
-  : "http://localhost:8000"; // ⛔ यहां dev URL देना है (अभी दोनों same हैं)
+  ? "https://echomeet-backend-3o3s.onrender.com"  // ✅ Production URL
+  : "http://localhost:8000"; // ⛔ Development URL (यहां local dev server)
 
 export default server;
 export { IS_PROD, server };
