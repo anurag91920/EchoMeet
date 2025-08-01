@@ -2,6 +2,7 @@ import axios from "axios";
 import httpStatus from "http-status";
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import server from "../environment";
 
 
@@ -39,24 +40,25 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
-    const handleLogin = async (username, password) => {
-        try {
-            let request = await client.post("/login", {
-                username: username,
-                password: password
-            });
+   const handleLogin = async (username, password) => {
+  try {
+    const request = await client.post("/login", { username, password });
+    console.log("Login response:", request);
 
-            console.log(username, password)
-            console.log(request.data)
-
-            if (request.status === httpStatus.OK) {
-                localStorage.setItem("token", request.data.token);
-                router("/home")
-            }
-        } catch (err) {
-            throw err;
-        }
+    if (request && request.data && request.status === httpStatus.OK) {
+      localStorage.setItem("token", request.data.token);
+      router("/home");
+    } else {
+      console.error("Unexpected response:", request);
     }
+  } catch (err) {
+    console.error("Login error full:", err); // पूरी error देखें
+    console.error("Login error response:", err.response);
+    console.error("Login error message:", err.message);
+    throw err;
+  }
+};
+
 
     const getHistoryOfUser = async () => {
         try {
@@ -94,5 +96,14 @@ export const AuthProvider = ({ children }) => {
             {children}
         </AuthContext.Provider>
     )
+};
 
-}
+export const useAuth = () => {
+    return useContext(AuthContext);
+};
+
+AuthProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+};
+
+export default AuthProvider;

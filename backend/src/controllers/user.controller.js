@@ -4,6 +4,19 @@ import bcrypt, { hash } from "bcrypt"
 
 import crypto from "crypto"
 import { Meeting } from "../models/meeting.model.js";
+
+// import { io } from "../index.js";
+
+export const socketManager = () => {
+    io.on("connection", (socket) => {
+        console.log(`Socket connected: ${socket.id}`);
+
+        socket.on("disconnect", () => {
+            console.log(`Socket disconnected: ${socket.id}`);
+        });
+    });
+};
+
 const login = async (req, res) => {
 
     const { username, password } = req.body;
