@@ -16,7 +16,7 @@ const server = createServer(app);
 
 // CORS config: केवल React frontend से requests allow करें
 app.use(cors({
-  origin: "http://localhost:3000",   // React app का URL
+  origin: "https://echo-meet-frontend-psi.vercel.app",   // React app का URL
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,                  // अगर आप cookies या authorization header भेज रहे हैं तो true करें
 }));
@@ -31,7 +31,7 @@ app.use(express.static("public"));
 // Socket.io सेटअप
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://echo-meet-frontend-psi.vercel.app",  // React app का URL
     methods: ["GET", "POST"],
     credentials: true,
   }
