@@ -38,5 +38,25 @@
 
 ---
 
-## 📁 Folder Structure
+## 📷 Screenshots
+
+Add screenshots of the meeting UI, join room screen, or chat components here.
+
+🔮 Future Enhancements
+
+🎥 Add video/audio calling (WebRTC)
+
+🧑‍💼 Authentication with JWT
+
+🗨️ Chat history and storage
+
+📋 Meeting scheduling & history
+
+📱 PWA or mobile support
+
+🧑 Author
+
+Anurag Chaurasiya
+📧 Email: anurag9120959628@gmail.com
+🌐 Portfolio: https://port-folio-one-red.vercel.app
 
