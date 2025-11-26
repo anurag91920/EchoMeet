@@ -21,6 +21,7 @@
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **React.js (v19.1.0)**
 - **React Router DOM**
 - **Material UI (MUI)**
@@ -29,6 +30,7 @@
 - **Emotion (CSS-in-JS)**
 
 ### Backend
+
 - **Node.js**, **Express.js**
 - **MongoDB** with **Mongoose**
 - **Socket.IO** (for WebSockets)
@@ -57,6 +59,7 @@ Add screenshots of the meeting UI, join room screen, or chat components here.
 🧑 Author
 
 Anurag Chaurasiya
-📧 Email: anurag9120959628@gmail.com
-🌐 Portfolio: https://port-folio-one-red.vercel.app
 
+📧 Email: <anurag9120959628@gmail.com>
+
+🌐 Portfolio: <https://port-folio-one-red.vercel.app>
